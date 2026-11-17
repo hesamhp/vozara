@@ -14,30 +14,30 @@ const CARDS = [
   {
     icon: MapPin,
     title: "آدرس فروشگاه",
-    lines: ["مازندران، ساری، بلوار شهدای محراب،", "فروشگاه بزرگ وزرا"],
+    lines: ["مازندران، ساری، بلوار کشاورز،", "بیست متری شهدای محراب، فروشگاه خانواده وزرا"],
     action: {
       label: "دریافت مسیر",
-      href: "https://maps.google.com/?q=ساری+بلوار+شهدای+محراب",
+      href: "https://maps.google.com/?q=ساری+بلوار+کشاورز+شهدای+محراب",
       external: true,
     },
   },
   {
     icon: Clock,
     title: "ساعت کاری",
-    lines: ["همه‌روزه از ساعت ۹ صبح تا ۱۰ شب", "جمعه‌ها: ۱۰ صبح تا ۹ شب"],
+    lines: ["شنبه تا پنجشنبه: از ساعت ۹ تا ۲۲", "جمعه‌ها: ۱۵ الی ۲۲"],
     action: { label: "مشاهده در نقشه", href: "#map" },
   },
   {
     icon: Phone,
     title: "تماس با ما",
-    lines: ["۰۱۱-۳۳۲۲۴۴۵۵", "۰۹۱۱-۱۲۳-۴۵۶۷"],
-    action: { label: "تماس تلفنی", href: "tel:01133224455" },
+    lines: ["۰۱۱-۳۳۲۳۰۳۹۶"],
+    action: { label: "تماس تلفنی", href: "tel:01133230396" },
   },
 ];
 
 const SOCIALS = [
-  { icon: Camera, label: "اینستاگرام وزرا", href: "https://instagram.com/vozara.clothes", external: true },
-  { icon: Phone, label: "تماس تلفنی", href: "tel:01133224455", external: false },
+  { icon: Camera, label: "اینستاگرام وزرا", href: "https://instagram.com/vozaara", external: true },
+  { icon: Phone, label: "تماس تلفنی", href: "tel:01133230396", external: false },
   { icon: MessageCircle, label: "پیام‌رسان بله", href: "https://ble.ir/vozara", external: true },
 ];
 
@@ -156,8 +156,8 @@ export default function Contact() {
             className="relative min-h-[380px] overflow-hidden rounded-[1.6rem] border border-ink/10 shadow-[0_30px_80px_rgba(15,21,18,0.15)] lg:min-h-0"
           >
             <iframe
-              title="نقشه‌ی فروشگاه وزرا — ساری، بلوار شهدای محراب"
-              src="https://maps.google.com/maps?q=%D8%B3%D8%A7%D8%B1%DB%8C%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%D8%B4%D9%87%D8%AF%D8%A7%DB%8C%20%D9%85%D8%AD%D8%B1%D8%A7%D8%A8&z=15&output=embed"
+              title="نقشه‌ی فروشگاه وزرا — ساری، بلوار کشاورز"
+              src="https://maps.google.com/maps?q=%D8%B3%D8%A7%D8%B1%DB%8C%20%D8%A8%D9%84%D9%88%D8%A7%D8%B1%20%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%20%D8%B4%D9%87%D8%AF%D8%A7%DB%8C%20%D9%85%D8%AD%D8%B1%D8%A7%D8%A8&z=15&output=embed"
               className="absolute inset-0 h-full w-full grayscale-[35%] contrast-[1.05]"
               loading="lazy"
             />
@@ -167,7 +167,7 @@ export default function Contact() {
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-verd" />
               </span>
               <span className="text-xs font-bold leading-6">
-                ساعت بازدید امروز: {faDigits(9)} صبح تا {faDigits(22)} شب
+                ساعت کاری: {faDigits(9)} الی {faDigits(22)} — جمعه‌ها {faDigits(15)} الی {faDigits(22)}
               </span>
             </div>
           </motion.div>

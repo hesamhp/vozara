@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import Installment from "./components/Installment";
 import Partners from "./components/Partners";
-import Banner from "./components/Banner";
 import About from "./components/About";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
@@ -61,7 +60,7 @@ function Intro({ done }: { done: () => void }) {
           transition={{ duration: 0.6, delay: 0.75 }}
           className="mt-4 text-[11px] font-bold tracking-[0.35em] text-ivory/45"
         >
-          فروشگاه بزرگ پوشاک — ساری
+          فروشگاه خانواده وزرا — ساری
         </motion.p>
       </div>
     </motion.div>
@@ -94,7 +93,6 @@ export default function App() {
         <Categories />
         <Installment />
         <Partners />
-        <Banner />
         <About />
         <Faq />
         <Contact />

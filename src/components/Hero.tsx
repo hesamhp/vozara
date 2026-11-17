@@ -20,20 +20,20 @@ interface Slide {
   ctaSecondary?: Cta;
 }
 
-const INSTAGRAM = "https://instagram.com/vozara.clothes";
+const INSTAGRAM = "https://instagram.com/vozaara";
 
 const SLIDES: Slide[] = [
   {
-    img: "https://images.pexels.com/photos/38290945/pexels-photo-38290945.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/hero-fashion-main.jpg",
     badge: "کالکشن تازه‌ی پوشاک وزرا",
     tab: "کالکشن فصل",
     title: ["استایلِ تو،", "امضای وزرا"],
-    sub: "پوشاک وزرا؛ جدیدترین کالکشن‌های زنانه، مردانه و بچگانه از معتبرترین برندها — هم‌اکنون در ساری، بلوار شهدای محراب.",
+    sub: "پوشاک وزرا؛ جدیدترین کالکشن‌های زنانه، مردانه و بچگانه از معتبرترین برندها — هم‌اکنون در ساری، بلوار کشاورز، بیست متری شهدای محراب.",
     ctaPrimary: { label: "مشاهده دسته‌بندی‌ها", href: "#categories" },
     ctaSecondary: { label: "شرایط اقساط", href: "#installment" },
   },
   {
-    img: "https://images.pexels.com/photos/8311880/pexels-photo-8311880.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    img: "/images/hero-installment.jpg",
     badge: "اقساط بدون بهره",
     tab: "اقساط وزرا",
     title: ["حالا بخر،", "قسط‌به‌قسط بده"],
@@ -42,7 +42,7 @@ const SLIDES: Slide[] = [
     ctaSecondary: { label: "بازدید حضوری", href: "#contact" },
   },
   {
-    img: "https://images.pexels.com/photos/15180569/pexels-photo-15180569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/hero-orgs.jpg",
     badge: "اعتبار سازمانی",
     tab: "اعتبار سازمانی",
     title: ["همکاری با", "ارگان‌های دولتی"],
@@ -51,7 +51,7 @@ const SLIDES: Slide[] = [
     ctaSecondary: { label: "تماس با ما", href: "#contact" },
   },
   {
-    img: "https://images.pexels.com/photos/10356436/pexels-photo-10356436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/hero-formal.jpg",
     badge: "مجلسی و رسمی",
     tab: "مجلسی و رسمی",
     title: ["برای لحظه‌های", "خاصِ زندگی"],
@@ -168,7 +168,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <h1 className="sr-only">پوشاک وزرا — فروشگاه بزرگ پوشاک در ساری | خرید حضوری و اقساطی با اعتبار سازمانی</h1>
+      <h1 className="sr-only">پوشاک وزرا — فروشگاه خانواده وزرا در ساری | خرید حضوری و اقساطی با اعتبار سازمانی</h1>
       {/* Overlays */}
       <div className="pointer-events-none absolute inset-0 z-10 bg-ink/15" />
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-l from-ink via-ink/40 to-ink/10" />

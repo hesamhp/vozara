@@ -12,8 +12,8 @@ const LINKS = [
 ];
 
 const SOCIALS = [
-  { icon: Camera, label: "اینستاگرام وزرا", href: "https://instagram.com/vozara.clothes", external: true },
-  { icon: Phone, label: "تماس تلفنی", href: "tel:01133224455", external: false },
+  { icon: Camera, label: "اینستاگرام وزرا", href: "https://instagram.com/vozaara", external: true },
+  { icon: Phone, label: "تماس تلفنی", href: "tel:01133230396", external: false },
   { icon: MessageCircle, label: "پیام‌رسان بله", href: "https://ble.ir/vozara", external: true },
 ];
 
@@ -31,7 +31,7 @@ export default function Footer() {
               «شیک پوشیدن، حق همه است»
             </p>
             <p className="mt-5 max-w-sm text-[13px] leading-8 text-ivory/55">
-              پوشاک وزرا، فروشگاه بزرگ پوشاک در ساری؛ پوشاک باکیفیت با شرایط اقساط و
+              پوشاک وزرا، فروشگاه خانواده وزرا در ساری؛ پوشاک باکیفیت با شرایط اقساط و
               اعتبار سازمانی. خرید، فقط به‌صورت حضوری در فروشگاه و سفارش از
               طریق پیج اینستاگرام.
             </p>
@@ -82,17 +82,17 @@ export default function Footer() {
             <ul className="mt-6 space-y-5 text-[13px] leading-7 text-ivory/60">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-verd" />
-                <span>مازندران، ساری، بلوار شهدای محراب، فروشگاه بزرگ وزرا</span>
+                <span>مازندران، ساری، بلوار کشاورز، بیست متری شهدای محراب، فروشگاه خانواده وزرا</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-verd" />
-                <a href="tel:01133224455" className="transition-colors hover:text-verd" dir="ltr">
-                  ۰۱۱-۳۳۲۲۴۴۵۵
+                <a href="tel:01133230396" className="transition-colors hover:text-verd" dir="ltr">
+                  ۰۱۱-۳۳۲۳۰۳۹۶
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-1 h-4 w-4 shrink-0 text-verd" />
-                <span>همه‌روزه: ۹ صبح تا ۱۰ شب</span>
+                <span>شنبه تا پنجشنبه: ۹ تا ۲۲، جمعه: ۱۵ تا ۲۲</span>
               </li>
             </ul>
             <button
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-ivory/10 pt-7 pb-28 text-[11px] font-semibold text-ivory/40 md:flex-row md:pb-8">
-          <span>© ۱۴۰۴ فروشگاه بزرگ وزرا — تمامی حقوق محفوظ است.</span>
+          <span>© ۱۴۰۴ فروشگاه خانواده وزرا — تمامی حقوق محفوظ است.</span>
           <a
             href="https://instagram.com/hesvm"
             target="_blank"

@@ -1,86 +1,60 @@
-import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpLeft, BadgeCheck, CreditCard, RotateCcw, Store } from "lucide-react";
 import MaskTitle from "./MaskTitle";
-import {
-  ArrowUpLeft,
-  BadgeCheck,
-  CreditCard,
-  RotateCcw,
-  Store,
-} from "lucide-react";
-import { faDigits } from "../lib/fa";
 
 const CATEGORIES = [
   {
-    title: "پوشاک زنانه",
-    count: "بیش از ۱۲۰۰ مدل",
-    img: "https://images.pexels.com/photos/38290936/pexels-photo-38290936.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "مردانه",
+    count: "بیش از ۹۰۰ مدل",
+    img: "/images/category-men.jpg",
     cls: "md:col-span-2 md:row-span-2",
   },
   {
-    title: "پوشاک مردانه",
-    count: "بیش از ۹۰۰ مدل",
-    img: "https://images.pexels.com/photos/17484792/pexels-photo-17484792.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "زنانه",
+    count: "بیش از ۱۲۰۰ مدل",
+    img: "/images/category-women.jpg",
     cls: "md:col-span-2",
   },
   {
-    title: "بچگانه و نوجوان",
+    title: "بچگانه",
     count: "بیش از ۶۰۰ مدل",
-    img: "https://images.pexels.com/photos/38778561/pexels-photo-38778561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/category-kids.jpg",
     cls: "md:col-span-1",
   },
   {
-    title: "مجلسی و رسمی",
+    title: "کیف و کفش",
+    count: "بیش از ۵۰۰ مدل",
+    img: "/images/category-bags-shoes.jpg",
+    cls: "md:col-span-1",
+  },
+  {
+    title: "مجلسی و رسمی مردانه",
     count: "بیش از ۳۵۰ مدل",
-    img: "https://images.pexels.com/photos/6487423/pexels-photo-6487423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/category-formal-men.jpg",
     cls: "md:col-span-1",
   },
   {
     title: "ورزشی و راحتی",
     count: "بیش از ۴۵۰ مدل",
-    img: "https://images.pexels.com/photos/13450690/pexels-photo-13450690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "/images/category-sport-casual.jpg",
     cls: "md:col-span-1",
   },
   {
-    title: "کیف، کفش و اکسسوری",
+    title: "اکسسوری و آرایشی بهداشتی",
     count: "بیش از ۸۰۰ مدل",
-    img: "https://images.pexels.com/photos/28645956/pexels-photo-28645956.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    cls: "md:col-span-1",
+    img: "/images/category-accessories-beauty.jpg",
+    cls: "md:col-span-2",
   },
 ];
 
 const BENEFITS = [
-  { icon: CreditCard, title: "اقساط انعطاف‌پذیر", text: "۶ تا ۲۴ ماهه، بدون بهره و کارمزد" },
-  { icon: BadgeCheck, title: "ضمانت اصالت کالا", text: "برندهای معتبر داخلی و خارجی" },
-  { icon: Store, title: "خرید حضوری در ساری", text: "فروشگاه بزرگ، بلوار شهدای محراب" },
-  { icon: RotateCcw, title: "۷ روز بازگشت", text: "بازگشت آسان، بدون قید و شرط" },
+  { icon: CreditCard, title: "اقساط انعطاف‌پذیر", text: "متنوع و شناور" },
+  { icon: BadgeCheck, title: "ضمانت اصالت کالا", text: "برند های معتبر داخلی و خارجی" },
+  { icon: Store, title: "خرید حضوری در ساری", text: "فروشگاه خانواده وزرا" },
+  { icon: RotateCcw, title: "۴۸ ساعت تعویض کالا", text: "تا ۴۸ ساعت تضمین تعویض کالا" },
 ];
 
 export default function Categories() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-
-  const onScroll = () => {
-    const el = trackRef.current;
-    if (!el || el.children.length === 0) return;
-    const card = el.children[0] as HTMLElement;
-    const step = card.offsetWidth + 16;
-    const i = Math.min(
-      CATEGORIES.length - 1,
-      Math.max(0, Math.round(Math.abs(el.scrollLeft) / step))
-    );
-    setActive(i);
-  };
-
-  const scrollTo = (i: number) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const card = el.children[i] as HTMLElement;
-    if (!card) return;
-    const target = card.offsetLeft - (el.scrollWidth - el.clientWidth);
-    el.scrollTo({ left: target, behavior: "smooth" });
-  };
-
   return (
     <section id="categories" className="scroll-mt-28 bg-ivory py-14 md:py-24">
       <div className="mx-auto max-w-[90rem] px-5 md:px-10">
@@ -110,7 +84,7 @@ export default function Categories() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: 0.16 }}
               className="mt-4 max-w-xl text-sm leading-8 text-ink/60 md:text-base md:leading-9"
             >
@@ -130,69 +104,48 @@ export default function Categories() {
             <ArrowUpLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1" />
           </motion.a>
         </div>
-      </div>
 
-      {/* Cards: mobile carousel / desktop grid */}
-      <div
-        ref={trackRef}
-        onScroll={onScroll}
-        className="no-scrollbar -mx-0 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 md:mx-auto md:grid md:max-w-[90rem] md:grid-cols-4 md:auto-rows-[250px] md:overflow-visible md:px-10 lg:gap-5"
-      >
-        {CATEGORIES.map((c, i) => (
-          <motion.a
-            key={c.title}
-            href="#contact"
-            initial={{ opacity: 0, y: 44 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-16px" }}
-            transition={{ duration: 0.7, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
-            className={`group relative h-[340px] w-[74%] shrink-0 snap-start overflow-hidden rounded-[1.6rem] bg-ink first-of-type:mr-5 last-of-type:ml-5 md:h-auto md:w-auto md:snap-none md:first-of-type:mr-0 md:last-of-type:ml-0 ${c.cls}`}
-          >
-            <img
-              src={c.img}
-              alt={c.title}
-              loading="lazy"
-              draggable={false}
-              className="absolute inset-0 h-full w-full object-cover object-[center_22%] transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent transition-opacity duration-500 group-hover:via-ink/40" />
+        {/* Cards — mobile 2-col grid (feature cards span 2), desktop 4-col editorial grid */}
+        <div className="grid grid-cols-2 auto-rows-[180px] gap-3 md:auto-rows-[250px] md:grid-cols-4 md:gap-5">
+          {CATEGORIES.map((c, i) => (
+            <motion.div
+              key={c.title}
+              initial={{ opacity: 0, y: 44 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-16px" }}
+              transition={{ duration: 0.7, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              className={`group relative cursor-default overflow-hidden rounded-[1.4rem] bg-ink transition-transform duration-200 active:scale-[0.97] md:rounded-[1.6rem] ${
+                i === 0 ? "col-span-2" : ""
+              } ${c.cls}`}
+            >
+              <img
+                src={c.img}
+                alt={c.title}
+                loading="lazy"
+                draggable={false}
+                className="absolute inset-0 h-full w-full object-cover object-[center_22%] transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent transition-opacity duration-500 group-hover:via-ink/40" />
 
-            <span className="absolute right-5 top-5 text-xs font-black tracking-widest text-ivory/50" dir="ltr">
-              {faDigits(String(i + 1).padStart(2, "0"))}
-            </span>
+              <span className="absolute right-4 top-4 text-[10px] font-black tracking-widest text-ivory/50 md:right-5 md:top-5 md:text-xs" dir="ltr">
+                {["۰۱", "۰۲", "۰۳", "۰۴", "۰۵", "۰۶", "۰۷"][i]}
+              </span>
 
-            <span className="absolute left-5 top-5 grid h-11 w-11 translate-y-2 place-items-center rounded-full bg-verd text-ink opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <ArrowUpLeft className="h-5 w-5" />
-            </span>
+              <div className="absolute inset-x-0 bottom-0 p-4 md:p-6">
+                <h3 className="text-base font-black leading-snug text-ivory md:text-2xl">
+                  {c.title}
+                </h3>
+                <p className="mt-1.5 flex items-center gap-2 text-[10px] font-bold text-verd-soft md:text-xs">
+                  <span className="inline-block h-1 w-1 rotate-45 bg-verd" />
+                  {c.count}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-            <div className="absolute bottom-0 right-0 w-full p-5 md:p-6">
-              <h3 className="text-xl font-black text-ivory md:text-2xl">{c.title}</h3>
-              <p className="mt-1.5 flex items-center gap-2 text-[11px] font-bold text-verd-soft md:text-xs">
-                <span className="inline-block h-1 w-1 rotate-45 bg-verd" />
-                {c.count}
-              </p>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-
-      {/* Carousel dots (mobile) */}
-      <div className="mt-6 flex items-center justify-center gap-2 md:hidden">
-        {CATEGORIES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollTo(i)}
-            aria-label={`کارت ${i + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              i === active ? "w-8 bg-verd-deep" : "w-1.5 bg-ink/20"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Benefits */}
-      <div className="mx-auto mt-12 max-w-[90rem] px-5 md:mt-16 md:px-10">
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[1.6rem] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Benefits */}
+        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-[1.6rem] border border-ink/15 bg-ink/15 sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((b, i) => (
             <motion.div
               key={b.title}

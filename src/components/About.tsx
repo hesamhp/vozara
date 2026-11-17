@@ -28,7 +28,7 @@ function Counter({
   }, [inView, to]);
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} dir="ltr" className="inline-block tabular-nums">
       {prefix}
       {faNum(Math.round(val))}
       {suffix}
@@ -36,11 +36,11 @@ function Counter({
   );
 }
 
-const STATS = [
-  { to: 15, suffix: "+", label: "سال تجربه" },
-  { to: 40000, suffix: "+", label: "مشتری وفادار" },
-  { to: 3000, suffix: "+", label: "مدل متنوع پوشاک" },
-  { to: 98, prefix: "٪", label: "رضایت مشتریان" },
+const STATS: { to: number; prefix: string; suffix: string; label: string }[] = [
+  { to: 30, prefix: "+", suffix: "", label: "سال تجربه" },
+  { to: 18, prefix: "+", suffix: "K", label: "مشتری وفادار" },
+  { to: 6, prefix: "+", suffix: "k", label: "تنوع پوشاک" },
+  { to: 98, prefix: "", suffix: "٪", label: "رضایت مشتریان" },
 ];
 
 export default function About() {
@@ -62,7 +62,7 @@ export default function About() {
         >
           <div className="relative overflow-hidden rounded-[2rem] shadow-[0_40px_90px_rgba(21,18,14,0.18)]">
             <img
-              src="https://images.pexels.com/photos/8386643/pexels-photo-8386643.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              src="/images/about-store.jpg"
               alt="داخل فروشگاه وزرا"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"
@@ -79,7 +79,7 @@ export default function About() {
             className="absolute -bottom-10 right-4 w-[46%] overflow-hidden rounded-3xl border-4 border-ivory shadow-[0_24px_60px_rgba(21,18,14,0.25)] md:right-8"
           >
             <img
-              src="https://images.pexels.com/photos/5698851/pexels-photo-5698851.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              src="/images/about-rack.jpg"
               alt="رگال پوشاک وزرا"
               loading="lazy"
               className="aspect-[3/4] w-full object-cover"
@@ -95,7 +95,7 @@ export default function About() {
               <circle cx="60" cy="60" r="56" className="fill-ink" />
               <text className="fill-verd-soft text-[10.5px] font-bold">
                 <textPath href="#circlePath">
-                  فروشگاه بزرگ پوشاک وزرا • ساری • بلوار شهدای محراب •
+                  فروشگاه خانواده وزرا • ساری • بلوار کشاورز •
                 </textPath>
               </text>
             </svg>
@@ -138,7 +138,7 @@ export default function About() {
           >
             <p>
               پوشاک وزرا سال‌ها پیش با یک هدف ساده در قلب ساری شروع شد:«پوشاک باکیفیت
-              برای همه، با پرداخت آسان». امروز، فروشگاه بزرگ وزرا در بلوار
+              برای همه، با پرداخت آسان». امروز، فروشگاه خانواده وزرا در بلوار
               شهدای محراب، با هزاران مدل از معتبرترین برندهای داخلی و خارجی،
               مقصدی مطمئن برای خانواده‌های مازندران است.
             </p>
@@ -168,7 +168,7 @@ export default function About() {
           >
             <MapPin className="h-5 w-5 shrink-0 text-verd-deep" />
             <span className="text-sm font-bold text-ink/80">
-              ساری، بلوار شهدای محراب، فروشگاه بزرگ وزرا
+              ساری، بلوار کشاورز، بیست متری شهدای محراب، فروشگاه خانواده وزرا
             </span>
           </motion.div>
 
@@ -183,12 +183,10 @@ export default function About() {
                 transition={{ duration: 0.6, delay: i * 0.08 }}
                 className="relative border-r-2 border-verd/40 pr-4"
               >
-                <div className="text-3xl font-black text-ink md:text-[2.1rem]" dir="rtl">
+                <div className="text-3xl font-black text-ink md:text-[2.1rem]">
                   <Counter to={s.to} prefix={s.prefix} suffix={s.suffix} />
                 </div>
-                <div className="mt-2 text-xs font-bold text-ink/50">
-                  {s.label === "مشتری وفادار" ? "مشتری وفادار" : s.label}
-                </div>
+                <div className="mt-2 text-xs font-bold text-ink/50">{s.label}</div>
               </motion.div>
             ))}
           </div>

@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Phone, Camera, MessageCircle, MapPin } from "lucide-react";
 
 const ITEMS = [
-  { icon: Phone, label: "تماس", href: "tel:01133224455", external: false, featured: false },
+  { icon: Phone, label: "تماس", href: "tel:01133230396", external: false, featured: false },
   { icon: MessageCircle, label: "بله", href: "https://ble.ir/vozara", external: true, featured: false },
-  { icon: Camera, label: "اینستا", href: "https://instagram.com/vozara.clothes", external: true, featured: true },
+  { icon: Camera, label: "اینستا", href: "https://instagram.com/vozaara", external: true, featured: true },
   { icon: MapPin, label: "مسیر", href: "https://maps.google.com/?q=%D8%B3%D8%A7%D8%B1%DB%8C+%D8%A8%D9%84%D9%88%D8%A7%D8%B1+%D8%B4%D9%87%D8%AF%D8%A7%DB%8C+%D9%85%D8%AD%D8%B1%D8%A7%D8%A8", external: true, featured: false },
 ];
 
